@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qiansheng.web2.modules.test.mapper.StuMapper">
+    <select id="findStudent" resultType="student">
+        SELECT * from stu
+    </select>
+
+    <select id="findById" resultType="student">
+        SELECT * from stu where id = #{id}
+    </select>
+
+    <insert id="insertUser">
+		INSERT INTO stu(name,age,sumScore)VALUE('小丸子',25,98.0);
+	</insert>
+
+
+</mapper>

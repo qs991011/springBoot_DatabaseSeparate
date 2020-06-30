@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <settings>
+        <!-- map下划线自动转大写 -->
+        <setting name="mapUnderscoreToCamelCase" value="true" />
+        <!-- 打印查询语句 -->
+        <setting name="logImpl" value="STDOUT_LOGGING" />
+        <!-- 返回字段为空时null也显示该字段 -->
+        <setting name="callSettersOnNulls" value="true"/>
+    </settings>
+    <typeAliases>
+        <typeAlias alias="student" type="com.qiansheng.web2.modules.test.Entity.Student" />
+        <typeAlias alias="Integer" type="java.lang.Integer" />
+        <typeAlias alias="Long" type="java.lang.Long" />
+        <typeAlias alias="HashMap" type="java.util.HashMap" />
+        <typeAlias alias="LinkedHashMap" type="java.util.LinkedHashMap" />
+        <typeAlias alias="ArrayList" type="java.util.ArrayList" />
+        <typeAlias alias="LinkedList" type="java.util.LinkedList" />
+        <package name="com.qiansheng.*.pojo"/>
+    </typeAliases>
+
+    <plugins>
+        <!-- 打印sql拦截器 -->
+        <plugin interceptor="com.qiansheng.web2.modules.test.interceptor.MybatisInterceptor"></plugin>
+    </plugins>
+</configuration>
